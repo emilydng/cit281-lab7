@@ -1,37 +1,65 @@
-## Welcome to GitHub Pages
+## Lab 7
 
-You can use the [editor on GitHub](https://github.com/killua-boop/cit281-lab7/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+``` markdown
+Goals and Outcomes
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+  -  Install and setup your personal computer with the software tools required for this course
+  -  Practice using software tools
+  -  Practice terminal or shell commands
+  -  Practice keyboard shortcuts
+  -  Create your first Node.js server-side JavaScript file
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Lab-07.js
 
-### Jekyll Themes
+```rouge
+   /*
+    CIT 281 Lab 07
+    Emily Deng
+  */
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/killua-boop/cit281-lab7/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+  class CustomError extends Error {
+      constructor(args) {
+          super(args);
+          this.name = "CustomError";
+      }
+  };
 
-### Support or Contact
+  function throwGenericError() {
+      throw new Error("Generic error");
+  }
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+  function throwCustomError() {
+      throw new CustomError("Custom error");
+  }
+
+  console.log("Force generic error");
+  try {
+      console.log("Generic error try block");
+      throwGenericError();
+  } catch (error) {
+      console.log("Generic error catch block");
+      console.log(`${error.name}: ${error.message}`);
+  } finally {
+      console.log("Generic error finally block");
+  }
+
+  console.log("Force custom error");
+  try {
+      console.log("Custom error try block");
+      throwCustomError();
+  } catch (error) {
+      console.log("Custom error catch block");
+      console.log(`${error.name}: ${error.message}`);
+  } finally {
+      console.log("Custom error finally block");
+  }
+
+ ```
+ 
+ *Screencapture of GitHub repo page*
+
+<img width="718" alt="lab-07" src="https://user-images.githubusercontent.com/84113983/120716184-86b51280-c47a-11eb-9c9e-1a9f9dc36465.png">
+
+
